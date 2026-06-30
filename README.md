@@ -11,9 +11,11 @@
 
   *Transition from Student to Employed in style with modern glassmorphism UI, interactive roadmaps, real-time ATS optimization, and 100% authentic offline brand guides.*
 
+  **🌐 Live Site:** [letscode.shravankumar.me](https://letscode.shravankumar.me)
+
   ---
   
-  [**Explore Features**](#-key-features) • [**Quick Start**](#-getting-started) • [**Docker Guide**](#-docker-deployment) • [**Developer Portfolio**](#-developer-portfolio)
+  [**Live Site**](https://letscode.shravankumar.me) • [**Explore Features**](#-key-features) • [**Quick Start**](#-getting-started) • [**Docker Guide**](#-docker-deployment) • [**Developer Portfolio**](#-developer-portfolio)
   
 </div>
 
