@@ -1,0 +1,278 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 3.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 3.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 3.9%);
+  --primary: hsl(240 5.9% 10%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --accent: hsl(240 4.8% 95.9%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(240 10% 3.9%);
+  --radius: 0.75rem;
+  --chart-1: hsl(0 0% 87%);
+  --chart-2: hsl(0 0% 55%);
+  --chart-3: hsl(0 0% 43%);
+  --chart-4: hsl(0 0% 37%);
+  --chart-5: hsl(0 0% 26%);
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 10% 3.9%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(240 5.9% 90%);
+  --sidebar-ring: hsl(240 10% 3.9%);
+}
+
+@theme {
+  --font-sans: var(--font-dm-sans), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: var(--font-caveat), cursive;
+  --font-ui: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Global Reset and Styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+  }
+}
+
+@theme inline {
+  --font-heading: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: var(--font-caveat), cursive;
+  --font-ui: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* ── Neo-Brutalist Utility Classes (Telusko-style) ── */
+.font-bebas {
+  font-family: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-caveat {
+  font-family: var(--font-caveat), cursive;
+}
+
+.font-dm-sans {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-space-grotesk {
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Neo-brutalist hard shadow card */
+.neo-card {
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0px #111111;
+  border-radius: 4px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.neo-card:hover {
+  box-shadow: 6px 6px 0px #111111;
+  transform: translate(-1px, -1px);
+}
+
+.dark .neo-card {
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: 4px 4px 0px rgba(255,255,255,0.1);
+}
+
+.dark .neo-card:hover {
+  box-shadow: 6px 6px 0px rgba(255,255,255,0.15);
+}
+
+/* Neo-brutalist button */
+.neo-btn {
+  border: 2px solid #111111;
+  box-shadow: 3px 3px 0px #111111;
+  border-radius: 4px;
+  font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.neo-btn:hover {
+  box-shadow: 4px 4px 0px #111111;
+  transform: translate(-1px, -1px);
+}
+
+.neo-btn:active {
+  box-shadow: 1px 1px 0px #111111;
+  transform: translate(2px, 2px);
+}
+
+.dark .neo-btn {
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 3px 3px 0px rgba(255,255,255,0.15);
+}
+
+.dark .neo-btn:hover {
+  box-shadow: 4px 4px 0px rgba(255,255,255,0.2);
+}
+
+.dark .neo-btn:active {
+  box-shadow: 1px 1px 0px rgba(255,255,255,0.1);
+}
+
+/* Telusko pastel badge tag */
+.neo-tag {
+  border: 1.5px solid currentColor;
+  border-radius: 4px;
+  font-family: var(--font-dm-sans), ui-sans-serif, sans-serif;
+  font-weight: 500;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+}
+
+/* Section heading Telusko style */
+.heading-display {
+  font-family: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.heading-script {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 600;
+}
+
+.dark {
+  --background: hsl(240 10% 9%);
+  --foreground: hsl(0 0% 98%);
+  --card: hsl(240 10% 12%);
+  --card-foreground: hsl(0 0% 98%);
+  --popover: hsl(240 10% 12%);
+  --popover-foreground: hsl(0 0% 98%);
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(240 5.9% 10%);
+  --secondary: hsl(240 3.7% 15.9%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --muted: hsl(240 3.7% 15.9%);
+  --muted-foreground: hsl(240 5% 64.9%);
+  --accent: hsl(240 3.7% 15.9%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --border: hsl(240 3.7% 20%);
+  --input: hsl(240 3.7% 20%);
+  --ring: hsl(240 4.9% 83.9%);
+  --chart-1: hsl(0 0% 87%);
+  --chart-2: hsl(0 0% 55%);
+  --chart-3: hsl(0 0% 43%);
+  --chart-4: hsl(0 0% 37%);
+  --chart-5: hsl(0 0% 26%);
+  --sidebar: hsl(240 10% 12%);
+  --sidebar-foreground: hsl(0 0% 98%);
+  --sidebar-primary: hsl(0 0% 98%);
+  --sidebar-primary-foreground: hsl(240 5.9% 10%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(0 0% 98%);
+  --sidebar-border: hsl(240 3.7% 20%);
+  --sidebar-ring: hsl(240 4.9% 83.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
